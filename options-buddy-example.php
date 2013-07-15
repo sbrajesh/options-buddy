@@ -86,8 +86,8 @@ class OptionsBuddy_Example {
         //add fields
         $page->get_section('basic_section')->add_fields(array( //remember, we registered basic section earlier
                 array(
-                    'name' => 'input_text_as_int',
-                    'label' => __( 'Text Input (integer validation)' ),//you already know it from previous example
+                    'name' => 'input_text1',
+                    'label' => __( 'Text Input' ),//you already know it from previous example
                     'desc' => __( 'Text input description' ),// this is used as the description of the field
                     'type' => 'text',
                     'default' => 'Title',//and this is the default value
