@@ -893,7 +893,7 @@ class OptionsBuddy_Settings_Page {
     function show_form() {
         ?>
         <div class="metabox-holder">
-            <div class="postbox">
+            <div class="postbox options-postbox" style="padding:10px;">
                 <form method="post" action="options.php">
                  <?php settings_fields( $this->get_optgroup() ); ?>
                 <?php foreach ( $this->sections as $section ) : ?>
@@ -943,7 +943,8 @@ class OptionsBuddy_Settings_Page {
 			call_user_func( $section['callback'], $section );
 
 		if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
-			continue;
+			return;
+		
 		echo '<table class="form-table">';
 		do_settings_fields( $page, $section['id'] );
 		echo '</table>';
